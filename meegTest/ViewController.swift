@@ -10,7 +10,7 @@ import UIKit
 import RSKImageCropper
 import AVFoundation
 
-class ViewController: UIViewController, RSKImageCropViewControllerDelegate {
+class ViewController: UIViewController, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource {
 
     
     @IBOutlet weak var mask: UIView!
@@ -119,6 +119,44 @@ class ViewController: UIViewController, RSKImageCropViewControllerDelegate {
         
     }
     
+    
+    @IBAction func takePhoto(_ sender: Any) {
+        
+        if let videoConnection = stillImageOutput.connection(withMediaType: AVMediaTypeVideo){
+            
+            stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: {(imageDataSampleBuffer,error) in
+                
+                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                
+                let image = UIImage(data: imageData!)
+                
+                
+                
+                var imageCropVC : RSKImageCropViewController!
+                
+                imageCropVC = RSKImageCropViewController(image: image!, cropMode: RSKImageCropMode.custom)
+                
+                print(imageCropVC.zoomScale)
+                
+                imageCropVC.delegate = self
+                imageCropVC.dataSource = self
+                
+                
+                self.present(imageCropVC, animated: true, completion: {
+                    
+                    print(imageCropVC.zoomScale)
+                    self.stopCaptureSession()
+                    
+                })
+                
+            })
+            
+        }
+        
+    }
+    
+    
+    
     func putMask(){
         
         let radius = 104.0
@@ -137,5 +175,31 @@ class ViewController: UIViewController, RSKImageCropViewControllerDelegate {
         
     }
 
+    func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
+        
+//        let croppedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CroppedVC" ) as! CroppedVC
+//        
+//        croppedVC.takenPhoto = croppedImage
+//        
+//        self.present(croppedVC, animated: true, completion: nil)
+        
+        
+    }
+    
+    func imageCropViewControllerCustomMaskRect(_ controller: RSKImageCropViewController) -> CGRect {
+        
+        return self.view.bounds
+        
+    }
+    
+    func imageCropViewControllerCustomMaskPath(_ controller: RSKImageCropViewController) -> UIBezierPath {
+        
+        let radius = 104.0
+        let circlePath = UIBezierPath(roundedRect: CGRect(x: (Double(self.view.center.x) - radius), y: (Double(self.view.center.y) - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
+        
+        return circlePath
+        
+    }
+    
 }
 

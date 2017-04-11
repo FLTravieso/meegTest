@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,18 +18,30 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpg-C9-kmn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLO-3P-MK9">
+                                <rect key="frame" x="0.0" y="505" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Ux3-jd-FD2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZgU-t4-S85"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qpg-C9-kmn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0ss-nr-gSQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xLO-3P-MK9" secondAttribute="bottom" constant="33" id="Kfr-KO-b5F"/>
                             <constraint firstAttribute="trailing" secondItem="Qpg-C9-kmn" secondAttribute="trailing" id="NGp-Iq-XtW"/>
+                            <constraint firstItem="xLO-3P-MK9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="afT-Zs-YEz"/>
                             <constraint firstItem="Qpg-C9-kmn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gvN-Xw-RQm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qpg-C9-kmn" secondAttribute="bottom" id="lLd-pE-fbV"/>
                         </constraints>
@@ -40,7 +52,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="96.7016491754123"/>
+            <point key="canvasLocation" x="114.375" y="96.126760563380287"/>
+        </scene>
+        <!--CroppedVC-->
+        <scene sceneID="fBd-Wq-xCO">
+            <objects>
+                <viewController storyboardIdentifier="CroppedVC" id="zX7-FM-WqB" customClass="CroppedVC" customModule="meegTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vUQ-zG-hJx"/>
+                        <viewControllerLayoutGuide type="bottom" id="bsh-sv-op6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hbd-2R-Pdt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u3T-ZH-Rbw">
+                                <rect key="frame" x="36.5" y="176.5" width="247" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="If5-Bo-yo6"/>
+                                    <constraint firstAttribute="height" constant="215" id="rN6-zo-cVM"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u3T-ZH-Rbw" firstAttribute="centerY" secondItem="hbd-2R-Pdt" secondAttribute="centerY" id="C0L-HX-BRI"/>
+                            <constraint firstItem="u3T-ZH-Rbw" firstAttribute="centerX" secondItem="hbd-2R-Pdt" secondAttribute="centerX" id="l43-xm-f00"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="croppedImage" destination="u3T-ZH-Rbw" id="PRZ-AW-IHA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYw-Kb-a8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.8" y="96.7016491754123"/>
         </scene>
     </scenes>
 </document>
