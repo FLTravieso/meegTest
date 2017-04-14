@@ -60,7 +60,7 @@ class ViewController: UIViewController, RSKImageCropViewControllerDelegate, RSKI
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.mask.layer.addSublayer(previewLayer!)
         previewLayer?.frame = self.mask.layer.bounds
-        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
         
         captureSession.startRunning()
         stillImageOutput.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
@@ -132,22 +132,38 @@ class ViewController: UIViewController, RSKImageCropViewControllerDelegate, RSKI
                 
                 
                 
-                var imageCropVC : RSKImageCropViewController!
+//                var imageCropVC : RSKImageCropViewController!
+//                
+//                imageCropVC = RSKImageCropViewController(image: image!, cropMode: RSKImageCropMode.custom)
+//                
+//                print(imageCropVC.zoomScale)
+//                
+//                imageCropVC.delegate = self
+//                imageCropVC.dataSource = self
+//                
+//                
+//                self.present(imageCropVC, animated: true, completion: {
+//                    
+//                    print(imageCropVC.zoomScale)
+//                    self.stopCaptureSession()
+//                    
+//                })
                 
-                imageCropVC = RSKImageCropViewController(image: image!, cropMode: RSKImageCropMode.custom)
+                let croppedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CroppedVC" ) as! CroppedVC
                 
-                print(imageCropVC.zoomScale)
+                let radius = 104.0
                 
-                imageCropVC.delegate = self
-                imageCropVC.dataSource = self
+                let circlePath = UIBezierPath(roundedRect: CGRect(x: (Double(self.view.center.x) - radius), y: (Double(self.view.center.y) - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
+                
+                let cropRect = CGRect(x: 0, y: 0, width: 960, height: 1704)
+                
+                croppedVC.takenPhoto = Cropper.sharedInstance.croppedImage(image!, cropRect: cropRect , rotationAngle: 0.0, zoomScale: 0.333, maskPath: circlePath, applyMaskToCroppedImage: true)
                 
                 
-                self.present(imageCropVC, animated: true, completion: {
-                    
-                    print(imageCropVC.zoomScale)
-                    self.stopCaptureSession()
-                    
-                })
+                //Cropper.sharedInstance.croppedImage2(image!, cropRect: cropRect , rotationAngle: 0.0, zoomScale: 0.333, maskPath: circlePath, applyMaskToCroppedImage: true)
+                
+                self.present(croppedVC, animated: true, completion: nil)
+                
                 
             })
             

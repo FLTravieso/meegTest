@@ -14,7 +14,7 @@ class CroppedVC: UIViewController {
     var takenPhoto: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(getDocumentsDirectory())
         if let availableImage = takenPhoto {
             
             croppedImage.image = availableImage
@@ -23,20 +23,23 @@ class CroppedVC: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func saveEmoji(_ sender: Any) {
+        
+        if let image = takenPhoto {
+            if let data = UIImagePNGRepresentation(image) {
+                let filename = getDocumentsDirectory().appendingPathComponent("copy2.png")
+                try? data.write(to: filename)
+            }
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        
+        
+        return documentsDirectory
     }
-    */
 
 }
