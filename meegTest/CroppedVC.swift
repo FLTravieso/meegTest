@@ -11,7 +11,10 @@ import UIKit
 class CroppedVC: UIViewController {
 
     @IBOutlet weak var croppedImage: UIImageView!
+    
     var takenPhoto: UIImage?
+    var index = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(getDocumentsDirectory())
@@ -27,10 +30,17 @@ class CroppedVC: UIViewController {
         
         if let image = takenPhoto {
             if let data = UIImagePNGRepresentation(image) {
-                let filename = getDocumentsDirectory().appendingPathComponent("copy2.png")
+                let filename = getDocumentsDirectory().appendingPathComponent("\(index).png")
                 try? data.write(to: filename)
             }
         }
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let goToPrincipal = storyBoard.instantiateViewController(withIdentifier: "PrincipalVC") as! PrincipalVC
+        
+        
+        self.present(goToPrincipal, animated:true, completion:nil)
         
     }
     

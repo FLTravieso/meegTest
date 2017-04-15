@@ -14,7 +14,7 @@ class ViewController: UIViewController, RSKImageCropViewControllerDelegate, RSKI
 
     
     @IBOutlet weak var mask: UIView!
-    
+    var index = Int()
     let captureSession = AVCaptureSession()
     var captureDevice : AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
@@ -159,6 +159,7 @@ class ViewController: UIViewController, RSKImageCropViewControllerDelegate, RSKI
                 
                 croppedVC.takenPhoto = Cropper.sharedInstance.croppedImage(image!, cropRect: cropRect , rotationAngle: 0.0, zoomScale: 0.333, maskPath: circlePath, applyMaskToCroppedImage: true)
                 
+                croppedVC.index = self.index
                 
                 //Cropper.sharedInstance.croppedImage2(image!, cropRect: cropRect , rotationAngle: 0.0, zoomScale: 0.333, maskPath: circlePath, applyMaskToCroppedImage: true)
                 
