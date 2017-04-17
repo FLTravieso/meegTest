@@ -21,8 +21,9 @@ class PrincipalVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         
         emojis.forEach{
         
+            let name = NSURL(fileURLWithPath: $0.absoluteString).deletingPathExtension
             
-            if let last = $0.lastPathComponent.characters.first, let value = Int(String(last)) {
+            if let index = name?.lastPathComponent.characters, let value = Int(String(index)) {
                 print(value)
                 myArray[value] =  UIImage(contentsOfFile: $0.path)!
             
