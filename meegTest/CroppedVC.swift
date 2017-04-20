@@ -21,7 +21,7 @@ class CroppedVC: UIViewController {
         if let availableImage = takenPhoto {
             
             croppedImage.image = availableImage
-            
+
             
         }
     }

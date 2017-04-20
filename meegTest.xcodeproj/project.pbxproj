@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B40684EC734445DFA57C4DD /* Pods_meegTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF51CFDD607AC26C334F13CE /* Pods_meegTest.framework */; };
 		846FBE121E982897000C5C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FBE111E982897000C5C39 /* AppDelegate.swift */; };
 		846FBE141E982897000C5C39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FBE131E982897000C5C39 /* ViewController.swift */; };
 		846FBE171E982897000C5C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846FBE151E982897000C5C39 /* Main.storyboard */; };
@@ -22,8 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3DE634AEC178C37E1E71E15D /* Pods-meegTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meegTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meegTest/Pods-meegTest.debug.xcconfig"; sourceTree = "<group>"; };
-		4E986B659B392B4C070F2989 /* Pods-meegTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meegTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-meegTest/Pods-meegTest.release.xcconfig"; sourceTree = "<group>"; };
 		846FBE0E1E982897000C5C39 /* meegTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meegTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846FBE111E982897000C5C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846FBE131E982897000C5C39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +34,6 @@
 		8E77DDC71EA14FB90064C3E2 /* EmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
 		8EDAD12E1E9D821500B3D2DC /* CroppedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroppedVC.swift; sourceTree = "<group>"; };
 		8EDAD1301E9D89EF00B3D2DC /* Cropper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cropper.swift; sourceTree = "<group>"; };
-		AF51CFDD607AC26C334F13CE /* Pods_meegTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meegTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B40684EC734445DFA57C4DD /* Pods_meegTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +52,6 @@
 			children = (
 				846FBE101E982897000C5C39 /* meegTest */,
 				846FBE0F1E982897000C5C39 /* Products */,
-				F7E6775C23FDC2371BC8B978 /* Pods */,
 				A2A75A86F6B5A983782D65F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -92,18 +86,8 @@
 		A2A75A86F6B5A983782D65F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF51CFDD607AC26C334F13CE /* Pods_meegTest.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F7E6775C23FDC2371BC8B978 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3DE634AEC178C37E1E71E15D /* Pods-meegTest.debug.xcconfig */,
-				4E986B659B392B4C070F2989 /* Pods-meegTest.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,12 +97,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 846FBE231E982897000C5C39 /* Build configuration list for PBXNativeTarget "meegTest" */;
 			buildPhases = (
-				35E4C3DE5B3D94BDB2EFA9B5 /* [CP] Check Pods Manifest.lock */,
 				846FBE0A1E982897000C5C39 /* Sources */,
 				846FBE0B1E982897000C5C39 /* Frameworks */,
 				846FBE0C1E982897000C5C39 /* Resources */,
-				69245B6B8A16AD7722C29B34 /* [CP] Embed Pods Frameworks */,
-				71F8EDCCF09AB486BBD1539E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,54 +157,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		35E4C3DE5B3D94BDB2EFA9B5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		69245B6B8A16AD7722C29B34 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-meegTest/Pods-meegTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71F8EDCCF09AB486BBD1539E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-meegTest/Pods-meegTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		846FBE0A1E982897000C5C39 /* Sources */ = {
@@ -356,7 +289,6 @@
 		};
 		846FBE241E982897000C5C39 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DE634AEC178C37E1E71E15D /* Pods-meegTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P9225KGPYB;
@@ -371,7 +303,6 @@
 		};
 		846FBE251E982897000C5C39 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E986B659B392B4C070F2989 /* Pods-meegTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P9225KGPYB;
