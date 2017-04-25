@@ -134,7 +134,9 @@ class ViewController: UIViewController {
                 
                 let croppedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CroppedVC" ) as! CroppedVC
                 
-                let radius = 104.0
+                var radius = 104.0
+                
+                radius = Double((image?.size.width)!)/4.0
                 
                 let circlePath = UIBezierPath(roundedRect: CGRect(x: (Double(self.view.center.x) - radius), y: (Double(self.view.center.y) - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
                 
@@ -162,7 +164,8 @@ class ViewController: UIViewController {
     
     func putMask(){
         
-        let radius = 104.0
+        var radius = 104.0
+        radius = Double((mask.frame.width))/4.0
         let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), cornerRadius: 0)
         let circlePath = UIBezierPath(roundedRect: CGRect(x: (Double(self.view.center.x) - radius), y: (Double(self.view.center.y) - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
         path.append(circlePath)
