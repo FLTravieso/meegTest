@@ -41,8 +41,10 @@ class Cropper{
         
         let imageScale: CGFloat = image.scale
         croppedRect2 = cropRect.applying(CGAffineTransform(scaleX: imageScale, y: imageScale))
+        
         // Step 2: create an image using the data contained within the specified rect.
         var croppImage: UIImage? = croppedImage(image, cropRect: cropRect, scale: imageScale, orientation: imageOrientation)
+        
         // Step 3: fix orientation of the cropped image.
         //croppImage = croppImage?.fixOrientation()
         imageOrientation = (croppImage?.imageOrientation)!
@@ -56,22 +58,28 @@ class Cropper{
         let maskPathCopy: UIBezierPath? = maskPath
         let scale: CGFloat = 1 / zoomScale
         maskPathCopy?.apply(CGAffineTransform(scaleX: scale, y: scale))
+        
         // 6b: move the mask to the top-left.
         let translation = CGPoint(x: CGFloat(-((maskPathCopy?.bounds.minX)!)), y: CGFloat(-((maskPathCopy?.bounds.minY)!)))
         maskPathCopy?.apply(CGAffineTransform(translationX: translation.x, y: translation.y))
+        
+        
         // 6c: apply the mask.
         maskPathCopy?.addClip()
         
         
         // Step 8: draw the cropped image.
-        let point = CGPoint(x: CGFloat(round((contextSize.width - (croppImage?.size.width)!) * 0.5)), y: CGFloat(round((contextSize.height - (croppImage?.size.height)!) * 0.5)))
+        let point = CGPoint(x: CGFloat(round((contextSize.width - (croppImage?.size.width)!) * 0.5)), y: CGFloat(round((contextSize.height - (croppImage?.size.height)!))))
         //let point = CGPoint(x: 0, y: 0)
         croppImage?.draw(at: point)
+        
         // Step 9: get the cropped image affter processing from the context.
         croppImage = UIGraphicsGetImageFromCurrentImageContext()
+        
         // Step 10: remove the context.
         UIGraphicsEndImageContext()
         croppImage = UIImage(cgImage: (croppImage?.cgImage)!)
+        
         // Step 11: return the cropped image affter processing.
         
         
@@ -102,7 +110,6 @@ class Cropper{
         
         }
         
-        print(croppedRect2)
         
         let croppImage: UIImage? = croppedImage(image, cropRect: croppedRect2, scale: 1.0, orientation: imageOrientation)
         
