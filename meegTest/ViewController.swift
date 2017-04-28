@@ -135,6 +135,7 @@ class ViewController: UIViewController {
                 
                 let croppedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CroppedVC" ) as! CroppedVC
                 
+                var radius = 104.0
                 
                 croppedVC.takenPhoto = Cropper.sharedInstance.croppedImage(image!)
                 
@@ -156,6 +157,8 @@ class ViewController: UIViewController {
     
     func putMask(){
         
+        var radius = 104.0
+        radius = Double((mask.frame.width))/4.0
         
         self.radius = self.view.bounds.width/4
         
