@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     var previewLayer : AVCaptureVideoPreviewLayer?
     var stillImageOutput : AVCaptureStillImageOutput = AVCaptureStillImageOutput()
     
+    var radius:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -27,7 +29,6 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         deleteSession()
@@ -134,16 +135,9 @@ class ViewController: UIViewController {
                 
                 let croppedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CroppedVC" ) as! CroppedVC
                 
-                let radius = 104.0
                 
-                let circlePath = UIBezierPath(roundedRect: CGRect(x: (Double(self.view.center.x) - radius), y: (Double(self.view.center.y) - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
+                croppedVC.takenPhoto = Cropper.sharedInstance.croppedImage(image!)
                 
-                let cropRect = CGRect(x: 0, y: 0, width: 960, height: 1704)
-                
-                croppedVC.takenPhoto = Cropper.sharedInstance.croppedImage(image!, cropRect: cropRect , rotationAngle: 0.0, zoomScale: 0.333, maskPath: circlePath, applyMaskToCroppedImage: true)
-                
-            
-
                 
                 croppedVC.index = self.index
                 
@@ -162,9 +156,16 @@ class ViewController: UIViewController {
     
     func putMask(){
         
-        let radius = 104.0
+        
+        self.radius = self.view.bounds.width/4
+        
+        print(self.view.frame.size,self.view.bounds.size)
+        
+        
         let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), cornerRadius: 0)
-        let circlePath = UIBezierPath(roundedRect: CGRect(x: (Double(self.view.center.x) - radius), y: (Double(self.view.center.y) - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
+        
+        let circlePath = UIBezierPath(roundedRect: CGRect(x: (self.view.center.x - radius), y: (self.view.center.y - radius), width: 2 * radius, height: 2 * radius), cornerRadius: CGFloat(radius))
+
         path.append(circlePath)
         path.usesEvenOddFillRule = true
         
