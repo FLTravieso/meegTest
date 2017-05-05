@@ -69,13 +69,13 @@ class PrincipalVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     }
     
     func getEmojis() {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         
-        let documentsDirectory = paths[0]
+        let fileManager = FileManager.default
+        let documentsDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.frank.meegTest")?.appendingPathComponent("emojis")
         do {
             
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsDirectory, includingPropertiesForKeys: nil, options: [])
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsDirectory!, includingPropertiesForKeys: nil, options: [])
             
             self.emojis = directoryContents
             

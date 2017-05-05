@@ -45,11 +45,21 @@ class CroppedVC: UIViewController {
     }
     
     func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
         
         
-        return documentsDirectory
+        
+        let fileManager = FileManager.default
+        let documentsDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.frank.meegTest")?.appendingPathComponent("emojis")
+        
+        do {
+            
+            try FileManager.default.createDirectory(atPath: (documentsDirectory?.path)!, withIntermediateDirectories: true, attributes: nil)
+            
+        } catch {
+            
+        }
+        
+        return documentsDirectory!
     }
 
 }
