@@ -18,6 +18,7 @@ class KeyboardViewController: UIInputViewController, UICollectionViewDelegate, U
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
+        setCollectionEmojisLayout()
         print("le")
         
         // Add custom view sizing constraints here
@@ -29,7 +30,7 @@ class KeyboardViewController: UIInputViewController, UICollectionViewDelegate, U
         
         getEmojis()
         setEmojis()
-        setCollectionEmojisLayout()
+        
         
         // Perform custom UI setup here
         self.nextKeyboardButton = UIButton(type: .system)
@@ -133,9 +134,9 @@ class KeyboardViewController: UIInputViewController, UICollectionViewDelegate, U
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: self.view.bounds.width/4, height: self.view.bounds.height/2)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.itemSize = CGSize(width: self.view.bounds.width/4, height: self.view.bounds.height/2 - 1)
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
         layout.scrollDirection = .horizontal
         
         self.collectionEmojis!.collectionViewLayout = layout
