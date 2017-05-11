@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,24 +22,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRe-XQ-IW8">
-                                <rect key="frame" x="164" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fn5-wb-DAU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qy7-KZ-Fz7">
+                                    <size key="itemSize" width="121" height="131"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="wUe-pc-msH" customClass="CollectionViewCell" customModule="keyboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="131"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h43-ml-doz">
+                                                    <rect key="frame" x="17.5" y="22.5" width="85" height="85"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="h43-ml-doz" firstAttribute="height" secondItem="wUe-pc-msH" secondAttribute="width" multiplier="0.7" id="Abd-e6-bwd"/>
+                                            <constraint firstItem="h43-ml-doz" firstAttribute="centerX" secondItem="wUe-pc-msH" secondAttribute="centerX" id="CS4-dZ-gvs"/>
+                                            <constraint firstItem="h43-ml-doz" firstAttribute="width" secondItem="wUe-pc-msH" secondAttribute="width" multiplier="0.7" id="CrS-xd-vZ5"/>
+                                            <constraint firstItem="h43-ml-doz" firstAttribute="centerY" secondItem="wUe-pc-msH" secondAttribute="centerY" id="TBQ-pP-TdM"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="emoji" destination="h43-ml-doz" id="7kT-a7-V8n"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <action selector="next:" destination="pho-h8-jgz" eventType="touchUpInside" id="uSY-Fi-nyp"/>
+                                    <outlet property="dataSource" destination="pho-h8-jgz" id="pWY-pv-O4w"/>
+                                    <outlet property="delegate" destination="pho-h8-jgz" id="Gc1-AN-ceK"/>
                                 </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BRe-XQ-IW8" firstAttribute="centerY" secondItem="YQL-xA-uy4" secondAttribute="centerY" id="USy-0T-SIX"/>
-                            <constraint firstItem="BRe-XQ-IW8" firstAttribute="centerX" secondItem="YQL-xA-uy4" secondAttribute="centerX" id="j3Z-jP-DL3"/>
+                            <constraint firstItem="oWH-Ty-ciw" firstAttribute="top" secondItem="Fn5-wb-DAU" secondAttribute="bottom" id="QXA-RE-TLI"/>
+                            <constraint firstAttribute="trailing" secondItem="Fn5-wb-DAU" secondAttribute="trailing" id="VbI-WM-Hol"/>
+                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="leading" secondItem="YQL-xA-uy4" secondAttribute="leading" id="cav-9H-dBh"/>
+                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="top" secondItem="YeV-6V-3nI" secondAttribute="bottom" id="mS3-g6-zhx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionEmojis" destination="Fn5-wb-DAU" id="42h-Sg-Qy8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa2-4W-few" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="-131"/>
+            <point key="canvasLocation" x="188" y="-131.78410794602701"/>
         </scene>
     </scenes>
 </document>
