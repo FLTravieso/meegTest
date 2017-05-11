@@ -13,17 +13,31 @@
 		846FBE1A1E982897000C5C39 /* meegTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846FBE181E982897000C5C39 /* meegTest.xcdatamodeld */; };
 		846FBE1C1E982897000C5C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846FBE1B1E982897000C5C39 /* Assets.xcassets */; };
 		846FBE1F1E982897000C5C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846FBE1D1E982897000C5C39 /* LaunchScreen.storyboard */; };
+		8E2401661EC29B2C00A474AD /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2401651EC29B2C00A474AD /* Messages.framework */; };
+		8E2401691EC29B2C00A474AD /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2401681EC29B2C00A474AD /* MessagesViewController.swift */; };
+		8E24016C1EC29B2C00A474AD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E24016A1EC29B2C00A474AD /* MainInterface.storyboard */; };
+		8E24016E1EC29B2C00A474AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E24016D1EC29B2C00A474AD /* Assets.xcassets */; };
+		8E2401721EC29B2C00A474AD /* meeGStickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E2401641EC29B2C00A474AD /* meeGStickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8E2401781EC29F3900A474AD /* meegStickersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2401771EC29F3900A474AD /* meegStickersVC.swift */; };
 		8E77DDC21EA1158C0064C3E2 /* EmojisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77DDC11EA1158C0064C3E2 /* EmojisVC.swift */; };
 		8E77DDC61EA14F110064C3E2 /* PrincipalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77DDC51EA14F110064C3E2 /* PrincipalVC.swift */; };
 		8E77DDC81EA14FB90064C3E2 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77DDC71EA14FB90064C3E2 /* EmojiCell.swift */; };
 		8E963EF01EB9462600305722 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E963EEF1EB9462600305722 /* KeyboardViewController.swift */; };
 		8E963EF41EB9462600305722 /* keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E963EED1EB9462600305722 /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8E9D64B61EC3CBC600397B59 /* myStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D64B51EC3CBC600397B59 /* myStoryboard.storyboard */; };
 		8EDAD12F1E9D821500B3D2DC /* CroppedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD12E1E9D821500B3D2DC /* CroppedVC.swift */; };
 		8EDAD1311E9D89EF00B3D2DC /* Cropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD1301E9D89EF00B3D2DC /* Cropper.swift */; };
 		F4915C0EDC05DD585EDAC335 /* Pods_meegTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3A7E4EB6DE5A80F6079675 /* Pods_meegTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8E2401701EC29B2C00A474AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846FBE061E982896000C5C39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E2401631EC29B2C00A474AD;
+			remoteInfo = meeGStickers;
+		};
 		8E963EF21EB9462600305722 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 846FBE061E982896000C5C39 /* Project object */;
@@ -40,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				8E2401721EC29B2C00A474AD /* meeGStickers.appex in Embed App Extensions */,
 				8E963EF41EB9462600305722 /* keyboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -60,12 +75,21 @@
 		846FBE201E982897000C5C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E24015B1EBB728B00A474AD /* meegTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = meegTest.entitlements; sourceTree = "<group>"; };
 		8E24015C1EBB77F300A474AD /* keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keyboard.entitlements; sourceTree = "<group>"; };
+		8E2401641EC29B2C00A474AD /* meeGStickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = meeGStickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E2401651EC29B2C00A474AD /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		8E2401681EC29B2C00A474AD /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8E24016B1EC29B2C00A474AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8E24016D1EC29B2C00A474AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E24016F1EC29B2C00A474AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E2401761EC29B4100A474AD /* meeGStickers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = meeGStickers.entitlements; sourceTree = "<group>"; };
+		8E2401771EC29F3900A474AD /* meegStickersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meegStickersVC.swift; sourceTree = "<group>"; };
 		8E77DDC11EA1158C0064C3E2 /* EmojisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisVC.swift; sourceTree = "<group>"; };
 		8E77DDC51EA14F110064C3E2 /* PrincipalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalVC.swift; sourceTree = "<group>"; };
 		8E77DDC71EA14FB90064C3E2 /* EmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
 		8E963EED1EB9462600305722 /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E963EEF1EB9462600305722 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		8E963EF11EB9462600305722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E9D64B51EC3CBC600397B59 /* myStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = myStoryboard.storyboard; sourceTree = "<group>"; };
 		8EDAD12E1E9D821500B3D2DC /* CroppedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroppedVC.swift; sourceTree = "<group>"; };
 		8EDAD1301E9D89EF00B3D2DC /* Cropper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cropper.swift; sourceTree = "<group>"; };
 		BBA4049B9207210DF89CABCE /* Pods-meegTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meegTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meegTest/Pods-meegTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +101,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4915C0EDC05DD585EDAC335 /* Pods_meegTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E2401611EC29B2C00A474AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E2401661EC29B2C00A474AD /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +136,7 @@
 			children = (
 				846FBE101E982897000C5C39 /* meegTest */,
 				8E963EEE1EB9462600305722 /* keyboard */,
+				8E2401671EC29B2C00A474AD /* meeGStickers */,
 				846FBE0F1E982897000C5C39 /* Products */,
 				A2A75A86F6B5A983782D65F7 /* Frameworks */,
 				3D6CE1BEF184FE62032A6472 /* Pods */,
@@ -115,6 +148,7 @@
 			children = (
 				846FBE0E1E982897000C5C39 /* meegTest.app */,
 				8E963EED1EB9462600305722 /* keyboard.appex */,
+				8E2401641EC29B2C00A474AD /* meeGStickers.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,12 +173,26 @@
 			path = meegTest;
 			sourceTree = "<group>";
 		};
+		8E2401671EC29B2C00A474AD /* meeGStickers */ = {
+			isa = PBXGroup;
+			children = (
+				8E2401761EC29B4100A474AD /* meeGStickers.entitlements */,
+				8E2401681EC29B2C00A474AD /* MessagesViewController.swift */,
+				8E24016A1EC29B2C00A474AD /* MainInterface.storyboard */,
+				8E24016D1EC29B2C00A474AD /* Assets.xcassets */,
+				8E24016F1EC29B2C00A474AD /* Info.plist */,
+				8E2401771EC29F3900A474AD /* meegStickersVC.swift */,
+			);
+			path = meeGStickers;
+			sourceTree = "<group>";
+		};
 		8E963EEE1EB9462600305722 /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
 				8E24015C1EBB77F300A474AD /* keyboard.entitlements */,
 				8E963EEF1EB9462600305722 /* KeyboardViewController.swift */,
 				8E963EF11EB9462600305722 /* Info.plist */,
+				8E9D64B51EC3CBC600397B59 /* myStoryboard.storyboard */,
 			);
 			path = keyboard;
 			sourceTree = "<group>";
@@ -153,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				6E3A7E4EB6DE5A80F6079675 /* Pods_meegTest.framework */,
+				8E2401651EC29B2C00A474AD /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,11 +225,29 @@
 			);
 			dependencies = (
 				8E963EF31EB9462600305722 /* PBXTargetDependency */,
+				8E2401711EC29B2C00A474AD /* PBXTargetDependency */,
 			);
 			name = meegTest;
 			productName = meegTest;
 			productReference = 846FBE0E1E982897000C5C39 /* meegTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8E2401631EC29B2C00A474AD /* meeGStickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E2401751EC29B2C00A474AD /* Build configuration list for PBXNativeTarget "meeGStickers" */;
+			buildPhases = (
+				8E2401601EC29B2C00A474AD /* Sources */,
+				8E2401611EC29B2C00A474AD /* Frameworks */,
+				8E2401621EC29B2C00A474AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = meeGStickers;
+			productName = meeGStickers;
+			productReference = 8E2401641EC29B2C00A474AD /* meeGStickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
 		};
 		8E963EEC1EB9462600305722 /* keyboard */ = {
 			isa = PBXNativeTarget;
@@ -219,6 +286,16 @@
 							};
 						};
 					};
+					8E2401631EC29B2C00A474AD = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = P9225KGPYB;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					8E963EEC1EB9462600305722 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = P9225KGPYB;
@@ -246,6 +323,7 @@
 			targets = (
 				846FBE0D1E982897000C5C39 /* meegTest */,
 				8E963EEC1EB9462600305722 /* keyboard */,
+				8E2401631EC29B2C00A474AD /* meeGStickers */,
 			);
 		};
 /* End PBXProject section */
@@ -261,10 +339,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E2401621EC29B2C00A474AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E24016E1EC29B2C00A474AD /* Assets.xcassets in Resources */,
+				8E24016C1EC29B2C00A474AD /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8E963EEB1EB9462600305722 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9D64B61EC3CBC600397B59 /* myStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +422,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E2401601EC29B2C00A474AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E2401781EC29F3900A474AD /* meegStickersVC.swift in Sources */,
+				8E2401691EC29B2C00A474AD /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8E963EE91EB9462600305722 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +442,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8E2401711EC29B2C00A474AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E2401631EC29B2C00A474AD /* meeGStickers */;
+			targetProxy = 8E2401701EC29B2C00A474AD /* PBXContainerItemProxy */;
+		};
 		8E963EF31EB9462600305722 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8E963EEC1EB9462600305722 /* keyboard */;
@@ -367,6 +469,14 @@
 				846FBE1E1E982897000C5C39 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8E24016A1EC29B2C00A474AD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E24016B1EC29B2C00A474AD /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -412,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -455,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -499,6 +609,40 @@
 			};
 			name = Release;
 		};
+		8E2401731EC29B2C00A474AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = meeGStickers/meeGStickers.entitlements;
+				DEVELOPMENT_TEAM = P9225KGPYB;
+				INFOPLIST_FILE = meeGStickers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = frank.meegTest.meeGStickers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8E2401741EC29B2C00A474AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = meeGStickers/meeGStickers.entitlements;
+				DEVELOPMENT_TEAM = P9225KGPYB;
+				INFOPLIST_FILE = meeGStickers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = frank.meegTest.meeGStickers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		8E963EF61EB9462600305722 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -506,7 +650,7 @@
 				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
 				DEVELOPMENT_TEAM = P9225KGPYB;
 				INFOPLIST_FILE = keyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = frank.meegTest.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,7 +666,7 @@
 				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
 				DEVELOPMENT_TEAM = P9225KGPYB;
 				INFOPLIST_FILE = keyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = frank.meegTest.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,6 +692,15 @@
 			buildConfigurations = (
 				846FBE241E982897000C5C39 /* Debug */,
 				846FBE251E982897000C5C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E2401751EC29B2C00A474AD /* Build configuration list for PBXNativeTarget "meeGStickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E2401731EC29B2C00A474AD /* Debug */,
+				8E2401741EC29B2C00A474AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

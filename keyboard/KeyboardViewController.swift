@@ -28,58 +28,20 @@ class KeyboardViewController: UIInputViewController, UICollectionViewDelegate, U
         
         getEmojis()
         setEmojis()
-        //print(myArray.count)
-        
-//        let imageTest = UIImageView()
-//        
-//        imageTest.image = myArray[0]
-//        imageTest.sizeToFit()
-//        imageTest.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        self.view.addSubview(imageTest)
-        let lBundle = Bundle(for: type(of: self))
-        let lCellNib = UINib(nibName: "KeyboardKeyCollectionViewCell", bundle: lBundle)
-        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.itemSize = CGSize(width: 20, height: 20)
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
-        layout.scrollDirection = .horizontal
-        
-        print(layout.itemSize)
-        
-        let mCollectionView: UICollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        
-        mCollectionView.isPagingEnabled = true
-        mCollectionView.contentOffset.x = 0.0
-        
-        mCollectionView.dataSource = self
-        mCollectionView.delegate = self
-        
-        mCollectionView.register(lCellNib, forCellWithReuseIdentifier: "Cell")
-        
-        mCollectionView.sizeToFit()
-        mCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(mCollectionView)
-        
-        mCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        mCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
         // Perform custom UI setup here
         self.nextKeyboardButton = UIButton(type: .system)
-        
+      
         self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.nextKeyboardButton.sizeToFit()
+//        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
         
         //self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         self.nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), for: .touchUpInside)
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+//        self.view.addSubview(self.nextKeyboardButton)
+//        
+//        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+//        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -142,6 +104,13 @@ class KeyboardViewController: UIInputViewController, UICollectionViewDelegate, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! KeyboardKeyCollectionViewCell
         cell.emoji.image = myArray[indexPath.row]
         return cell
+    }
+    
+    
+    @IBAction func next(_ sender: Any) {
+        print("ejele")
+        self.advanceToNextInputMode()
+        
     }
     
 }
