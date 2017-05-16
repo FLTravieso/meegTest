@@ -13,7 +13,7 @@
         <!--Keyboard View Controller-->
         <scene sceneID="5sM-NP-pfb">
             <objects>
-                <viewController id="pho-h8-jgz" customClass="KeyboardViewController" customModule="keyboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="pho-h8-jgz" customClass="KeyboardViewController" customModule="keyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YeV-6V-3nI"/>
                         <viewControllerLayoutGuide type="bottom" id="oWH-Ty-ciw"/>
@@ -22,25 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fn5-wb-DAU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fn5-wb-DAU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="533.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qy7-KZ-Fz7">
-                                    <size key="itemSize" width="121" height="131"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="qy7-KZ-Fz7">
+                                    <size key="itemSize" width="100" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="13" maxX="0.0" maxY="400"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="wUe-pc-msH" customClass="CollectionViewCell" customModule="keyboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="131"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="100" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="121" height="131"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h43-ml-doz">
-                                                    <rect key="frame" x="17.5" y="22.5" width="85" height="85"/>
+                                                    <rect key="frame" x="14.5" y="10.5" width="70" height="70"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -60,17 +60,61 @@
                                     <outlet property="delegate" destination="pho-h8-jgz" id="Gc1-AN-ceK"/>
                                 </connections>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IRn-SS-QfI">
+                                <rect key="frame" x="0.0" y="553.5" width="375" height="133.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-DV-74z">
+                                        <rect key="frame" x="0.0" y="50.5" width="125" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="ABC">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="next:" destination="pho-h8-jgz" eventType="touchUpInside" id="Iz5-yD-SDf"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ipO-QU-DrG">
+                                        <rect key="frame" x="125" y="48.5" width="125" height="37"/>
+                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTS-Gn-YZ4">
+                                        <rect key="frame" x="250" y="50.5" width="125" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteEmoji:" destination="pho-h8-jgz" eventType="touchUpInside" id="LkX-nZ-LnM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-4J-d8v">
+                                <rect key="frame" x="371" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.43921568630000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oWH-Ty-ciw" firstAttribute="top" secondItem="Fn5-wb-DAU" secondAttribute="bottom" id="QXA-RE-TLI"/>
-                            <constraint firstAttribute="trailing" secondItem="Fn5-wb-DAU" secondAttribute="trailing" id="VbI-WM-Hol"/>
-                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="leading" secondItem="YQL-xA-uy4" secondAttribute="leading" id="cav-9H-dBh"/>
-                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="top" secondItem="YeV-6V-3nI" secondAttribute="bottom" id="mS3-g6-zhx"/>
+                            <constraint firstItem="Sht-4J-d8v" firstAttribute="height" secondItem="YQL-xA-uy4" secondAttribute="height" id="7AK-Ql-6vd"/>
+                            <constraint firstItem="Sht-4J-d8v" firstAttribute="width" secondItem="YQL-xA-uy4" secondAttribute="width" id="DwG-4W-rba"/>
+                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="height" secondItem="YQL-xA-uy4" secondAttribute="height" multiplier="0.8" id="PJj-iU-4Mx"/>
+                            <constraint firstItem="IRn-SS-QfI" firstAttribute="height" secondItem="YQL-xA-uy4" secondAttribute="height" multiplier="0.2" id="Pc2-QF-XNa"/>
+                            <constraint firstAttribute="trailing" secondItem="IRn-SS-QfI" secondAttribute="trailing" id="SDd-DB-18x"/>
+                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="centerX" secondItem="YQL-xA-uy4" secondAttribute="centerX" id="TKX-zZ-Usl"/>
+                            <constraint firstItem="IRn-SS-QfI" firstAttribute="leading" secondItem="YQL-xA-uy4" secondAttribute="leading" id="VxG-aK-gxb"/>
+                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="width" secondItem="YQL-xA-uy4" secondAttribute="width" id="jd9-Ar-I1j"/>
+                            <constraint firstItem="Sht-4J-d8v" firstAttribute="centerY" secondItem="YQL-xA-uy4" secondAttribute="centerY" id="mpY-Dd-1Rs"/>
+                            <constraint firstItem="Fn5-wb-DAU" firstAttribute="top" secondItem="YeV-6V-3nI" secondAttribute="bottom" id="uQU-2j-LPv"/>
+                            <constraint firstItem="IRn-SS-QfI" firstAttribute="top" secondItem="Fn5-wb-DAU" secondAttribute="bottom" id="uTh-Ro-5v9"/>
+                            <constraint firstItem="Sht-4J-d8v" firstAttribute="centerX" secondItem="YQL-xA-uy4" secondAttribute="centerX" id="xfx-rT-Mpr"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="collectionEmojis" destination="Fn5-wb-DAU" id="42h-Sg-Qy8"/>
+                        <outlet property="deleteButton" destination="RTS-Gn-YZ4" id="ZNa-u1-QJK"/>
+                        <outlet property="hintView" destination="Sht-4J-d8v" id="qPb-9s-JUf"/>
+                        <outlet property="pager" destination="ipO-QU-DrG" id="xBz-ed-vPJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa2-4W-few" userLabel="First Responder" sceneMemberID="firstResponder"/>
