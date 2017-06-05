@@ -19,6 +19,7 @@ class PrincipalVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         
         print("prueba")
         print("prueba 2")
+        print("prueba 3")
         getEmojis()
         
         emojis.forEach{
