@@ -17,6 +17,8 @@ class PrincipalVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("prueba")
+        print("prueba 2")
         getEmojis()
         
         emojis.forEach{
