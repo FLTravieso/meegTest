@@ -28,6 +28,8 @@
 		8E9D64B61EC3CBC600397B59 /* myStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D64B51EC3CBC600397B59 /* myStoryboard.storyboard */; };
 		8EDAD12F1E9D821500B3D2DC /* CroppedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD12E1E9D821500B3D2DC /* CroppedVC.swift */; };
 		8EDAD1311E9D89EF00B3D2DC /* Cropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD1301E9D89EF00B3D2DC /* Cropper.swift */; };
+		8EE905511EDCB5EF00D86FDE /* Tutorial1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE905501EDCB5EF00D86FDE /* Tutorial1VC.swift */; };
+		8EE905571EDCD68A00D86FDE /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE905561EDCD68A00D86FDE /* StepCell.swift */; };
 		F4915C0EDC05DD585EDAC335 /* Pods_meegTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3A7E4EB6DE5A80F6079675 /* Pods_meegTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		8E9D64B51EC3CBC600397B59 /* myStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = myStoryboard.storyboard; sourceTree = "<group>"; };
 		8EDAD12E1E9D821500B3D2DC /* CroppedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroppedVC.swift; sourceTree = "<group>"; };
 		8EDAD1301E9D89EF00B3D2DC /* Cropper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cropper.swift; sourceTree = "<group>"; };
+		8EE905501EDCB5EF00D86FDE /* Tutorial1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial1VC.swift; sourceTree = "<group>"; };
+		8EE905561EDCD68A00D86FDE /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
 		BBA4049B9207210DF89CABCE /* Pods-meegTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meegTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meegTest/Pods-meegTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,8 @@
 				846FBE181E982897000C5C39 /* meegTest.xcdatamodeld */,
 				8E77DDC51EA14F110064C3E2 /* PrincipalVC.swift */,
 				8E77DDC71EA14FB90064C3E2 /* EmojiCell.swift */,
+				8EE905501EDCB5EF00D86FDE /* Tutorial1VC.swift */,
+				8EE905561EDCD68A00D86FDE /* StepCell.swift */,
 			);
 			path = meegTest;
 			sourceTree = "<group>";
@@ -418,10 +424,12 @@
 				8EDAD12F1E9D821500B3D2DC /* CroppedVC.swift in Sources */,
 				846FBE1A1E982897000C5C39 /* meegTest.xcdatamodeld in Sources */,
 				846FBE141E982897000C5C39 /* ViewController.swift in Sources */,
+				8EE905511EDCB5EF00D86FDE /* Tutorial1VC.swift in Sources */,
 				8E77DDC21EA1158C0064C3E2 /* EmojisVC.swift in Sources */,
 				846FBE121E982897000C5C39 /* AppDelegate.swift in Sources */,
 				8E77DDC81EA14FB90064C3E2 /* EmojiCell.swift in Sources */,
 				8EDAD1311E9D89EF00B3D2DC /* Cropper.swift in Sources */,
+				8EE905571EDCD68A00D86FDE /* StepCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
