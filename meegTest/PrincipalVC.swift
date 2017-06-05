@@ -22,6 +22,7 @@ class PrincipalVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         print("prueba 3")
         print("preuba 4")
         print("feature1")
+        print("this is feature branch 1")
         getEmojis()
         
         emojis.forEach{
